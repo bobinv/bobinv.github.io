@@ -1,55 +1,66 @@
-# Ctrl Alt Automate — Dark + Light theme website
+# Ctrl Alt Automate — Industry Use Cases edition
 
-A six-page, responsive static website designed for GitHub Pages. It includes an accessible **light/dark theme toggle** in the header of every page, no database or backend required.
+A **seven-page, light/dark responsive website** ready for GitHub Pages. Builds on the previous Ctrl Alt Automate design with a dedicated industry use-case catalogue and guided contact enquiry email composer.
 
-## The two themes
+## Pages
 
-- **Dark mode (default):** Midnight navy surfaces with electric mint highlights.
-- **Light mode:** Soft ivory/white surfaces, deep-navy text and mint/teal accents.
-- Use the sun/moon control at the top right of the navigation to switch themes.
-- Your selection is saved in the browser using `localStorage` and reused across all pages and subsequent visits. If browser storage is blocked, switching still works until the next page load.
-- The first load defaults to **dark mode**, rather than the device's system theme.
-- The workflow demo remains navy in light mode as a deliberate visual contrast.
-- Theme icons have descriptive accessible labels, and the existing reduced-motion settings remain respected.
+| Page | File | What's new |
+| --- | --- | --- |
+| Home | `index.html` | Three featured use cases, industry links, and CTA to the catalogue |
+| Services | `services.html` | Link from services into the industry catalogue |
+| Solutions | `solutions.html` | Link from solution patterns into industry examples |
+| **Use Cases** | `use-cases.html` | **21 practical examples for seven audiences** + industry filters and search |
+| AI Training | `ai-training.html` | Existing content retained |
+| About | `about.html` | Existing content retained |
+| Contact | `contact.html` | Use-case-linked enquiry form that drafts an email |
 
-## Files to upload to GitHub
+### Industries included
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Home |
-| `services.html` | Services |
-| `solutions.html` | Solutions |
-| `ai-training.html` | AI training |
-| `about.html` | About |
-| `contact.html` | Contact |
-| `styles.css` | Base layout |
-| `premium.css` | Dark navy / electric mint styles |
-| `theme.css` | Theme toggle layout + light-mode styles |
-| `script.js` | Mobile navigation, theme selection, saved theme, copyright year |
-| `README.md` | This guide |
+- Finance teams (invoices, receivables, month-end reporting)
+- Asset management (asset lifecycle, preventive maintenance, inventory reconciliation)
+- Retail (low stock, customer enquiries, daily performance reporting)
+- Local councils (resident requests, permits, waste and facilities)
+- Schools (enrolments, parent communications, devices and IT)
+- Tradies / field services (quotes, scheduling, invoicing)
+- Healthcare operations (appointments, referrals, inventory)
 
-Upload **all files** from the ZIP to your repository root. CSS and JavaScript must remain alongside the HTML pages.
+All scenarios are illustrative solution ideas, **not claims of completed client projects or guaranteed results**. Sensitive operations require appropriate privacy, security, human review, and regulatory controls.
 
-## Publish with GitHub Pages
+## How the industry filters work
 
-1. Create a public repository called `YOURUSERNAME.github.io` (replace `YOURUSERNAME` with your GitHub username), or use an existing project repository.
-2. Extract the ZIP, then upload its contents (not the ZIP itself) to the repository root.
-3. Open **Settings → Pages** in GitHub.
-4. Under **Build and deployment**, select **Deploy from a branch**; select `main` and `/(root)`; save.
-5. Open `https://YOURUSERNAME.github.io/` or, for a project repo, `https://YOURUSERNAME.github.io/REPOSITORYNAME/` after deployment.
+- Open `use-cases.html` to browse all 21 cards.
+- Click a filter chip, or type into the search field.
+- Direct industry links work with `use-cases.html?industry=finance#finance` (replace finance with `assets`, `retail`, `councils`, `schools`, `tradies`, or `healthcare`).
+- Each **Discuss this use case** link opens the Contact page with the appropriate industry and case already selected.
+- The site remains static; filters run in the browser without any backend.
+- `usecases-data.json` contains the editable source copy of the 21 ideas. If you edit the JSON, also update the matching HTML (the website uses static HTML, not an on-the-fly build system).
 
-No paid hosting, runtime, third-party CSS, or build step is required.
+## Contact form behaviour — IMPORTANT
 
-## Edit before going live
+The Contact page **does not send an enquiry to a server**. It prepares an email draft using `mailto:`; the visitor must press Send in their email app. The page also offers Copy enquiry for people who do not have a default mail application.
 
-- Replace `hello@yourdomain.com` in all HTML files with your real business email address.
-- Check service descriptions and example workflows against the services your business actually offers.
-- Contact links **currently open email**, rather than sending Formspree submissions. To use Formspree, create a form and configure its real endpoint. The theme toggle does not change this functionality.
+**Before publishing**, replace `hello@yourdomain.com` in all the HTML files **and** in `usecases.js` with your actual business contact email. This is not a working inbox.
 
-## Customise appearance
+If you decide to use Formspree instead, create a real Formspree endpoint and configure the contact form to POST to it. There is no placeholder endpoint or database connection in this package.
 
-- Edit `premium.css` to adjust the original dark theme.
-- Edit `theme.css` to adjust the light theme and theme-switch button.
-- To change the default to light mode, update the default theme in the bootstrap script found in each HTML `<head>` and ensure `script.js` uses the same storage key.
+## GitHub Pages deployment
 
-The site was checked at 320, 390, 768, 900, 1050, 1280 and 1440 pixel viewport widths in both themes, including the mobile menu and theme switching.
+1. Download and extract the ZIP.
+2. Upload **all extracted files at repository root**; do not upload only the ZIP.
+3. GitHub repository → **Settings → Pages → Deploy from a branch**.
+4. Choose `main` + `/(root)` and Save.
+5. Use `https://YOURUSERNAME.github.io/` for a user site or `https://YOURUSERNAME.github.io/REPOSITORY/` for a project site.
+
+No build tools, paid hosting, server, or database is required.
+
+## Files included
+
+- Seven `.html` pages
+- `styles.css`, `premium.css`, `theme.css`, `usecases.css`
+- `script.js`, `usecases.js`
+- `usecases-data.json` — editable catalogue source text
+- `README.md` — this guide
+
+## Theme
+
+The header's light/dark toggle remains available on all seven pages and persists its selection in local browser storage. Dark remains the default theme.
