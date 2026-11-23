@@ -1,43 +1,50 @@
-# Ctrl Alt Automate — multi-page static managed services website
+# Ctrl Alt Automate — Midnight Navy + Electric Mint website
 
-A polished, responsive 6-page website made entirely with HTML, CSS and JavaScript. It can be hosted for free on GitHub Pages. No Node.js, React build, database, account or backend is required for the site itself.
+A premium, six-page **static** managed services website. It is ready for GitHub Pages and requires no backend, Node.js, framework, CDN, third-party fonts, or paid hosting.
 
-## Pages
+## Files
 
-- `index.html` — Home / landing page
-- `services.html` — Six service areas
-- `solutions.html` — Example business use cases
-- `ai-training.html` — AI training tracks and responsible adoption
-- `about.html` — Approach and delivery principles
-- `contact.html` — Email-based enquiries
-- `styles.css` — Shared styles for all pages
-- `script.js` — Mobile navigation and current year
+| File | Purpose |
+| --- | --- |
+| `index.html` | Homepage, hero demo, service overview and FAQs |
+| `services.html` | Full capabilities and delivery models |
+| `solutions.html` | Workflow and business automation examples |
+| `ai-training.html` | AI training programmes and responsible adoption |
+| `about.html` | Method and delivery principles |
+| `contact.html` | Contact options (email links) |
+| `styles.css` | Base responsive layout |
+| `premium.css` | Navy/mint design system, glass-style cards and animations |
+| `script.js` | Mobile navigation and automatic copyright year |
 
-## Customise before publishing
+**Important:** All nine files should be uploaded to the **root** of your GitHub repository (do not upload the ZIP unopened). Keep the two stylesheets named exactly as shown.
 
-1. **Brand:** Ctrl Alt Automate is already applied consistently across all six pages (headers, footers, page titles and email subjects).
-2. **`hello@yourdomain.com` is not a working email address for you.** Replace all appearances in `contact.html`, footer markup on every page and homepage contact links with your actual inbox.
-3. Update the HTML page titles, descriptions and service text to reflect the services you really offer.
-4. Edit the colour variables at the top of `styles.css` for brand colours.
-5. The sample use cases, training plans and workflow illustration are deliberately described as examples. The website includes no invented clients, achievements or certifications.
+## Preview on your computer
 
-## Preview locally
+Open `index.html` in a browser. You can navigate to all the other pages through the header. No build step is required. If your browser has special local-file restrictions, you can run `python -m http.server 8000` in the extracted folder, then visit `http://localhost:8000`.
 
-Double-click `index.html` to open it in your browser, then use the navigation links. (On some browsers a local webserver helps: `python -m http.server 8000` and visit `http://localhost:8000`.)
+## Publish with GitHub Pages
 
-## Host on GitHub Pages for free
+1. Create a public GitHub repository called `YOURUSERNAME.github.io` (replace `YOURUSERNAME` with your actual account name).
+2. Upload all nine website files to the repository root and commit them on the `main` branch.
+3. Open **Settings → Pages**.
+4. For **Build and deployment**, select **Deploy from a branch**, then choose branch `main` and folder `/(root)`, and save.
+5. Once deployment finishes, your site will be live at `https://YOURUSERNAME.github.io/`.
 
-1. Create a public repository called `YOURUSERNAME.github.io`, replacing YOURUSERNAME with your actual GitHub username.
-2. Upload **all 8 files** listed above (or the complete contents of the ZIP). Keep them in the repository root. Do not upload the ZIP without extracting it.
-3. Open repository **Settings → Pages**.
-4. Under **Build and deployment**, set **Source** to `Deploy from a branch`; choose `main` and `/(root)`; save.
-5. Once published, visit `https://YOURUSERNAME.github.io/`.
+For a project repository named `ctrl-alt-automate`, your URL will usually be `https://YOURUSERNAME.github.io/ctrl-alt-automate/`. Relative links and assets work for both patterns.
 
-For any differently named repository, the address is `https://YOURUSERNAME.github.io/REPOSITORY-NAME/`. All links are relative, so both URL styles work.
+## Update your content before publishing
 
-## FAQ
+1. **Email placeholder:** Replace **every occurrence** of `hello@yourdomain.com` across all `.html` files with your real business inbox. This includes `mailto:` links. Until you do, enquiry links are not usable.
+2. **Brand:** `Ctrl Alt Automate` is applied to all pages, headers, titles and footers. Edit the text if your registered business name is different.
+3. **Services:** Review statements to ensure all services described are genuinely provided. Example use cases are clearly illustrative and do not assert customer results.
+4. **Colours:** Change `--navy`, `--mint`, and the section/card CSS rules in `premium.css` to restyle the theme. All backgrounds, lighting and gradients can be customised.
+5. **Copy:** Each page is editable HTML. You do not need to rebuild the site after text changes—commit to GitHub and it republishes automatically.
 
-- **Does the Contact page send messages?** It opens the visitor's email client via `mailto:`. It is not a hosted contact form. A working form needs a third-party form service or backend.
-- **Are there hosting charges?** No, for this static website on GitHub Pages (subject to GitHub Pages usage policies). A custom domain is optional and separately priced.
-- **Can I edit individual pages?** Yes; edit that page's `.html` file, commit and GitHub republishes.
-- **Are external resources required?** No external fonts, images, CDNs or libraries are loaded.
+## Notes
+
+- Mobile navigation is accessible and supports Escape to close.
+- Subtle transitions and animations respect the visitor's reduced-motion preference.
+- All page navigation and styles use relative URLs compatible with GitHub Pages.
+- The workflow dashboard on the homepage is **illustrative**, not a live integration.
+- The contact page uses email links (`mailto:`), **not a working web form**. A form would require an external form provider or serverless backend.
+- A custom domain is optional; HTTPS on GitHub's free Pages URL is available at no additional charge.
