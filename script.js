@@ -25,3 +25,27 @@ if (toggle && nav && icon) {
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 }
 document.querySelectorAll('.js-year').forEach(e => e.textContent = String(new Date().getFullYear()));
+
+
+// Site-wide accessible light/dark preference, with storage fallback.
+const themeToggle = document.querySelector('.theme-toggle');
+function syncThemeControl() {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  const actionLabel = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+  if (!themeToggle) return;
+  themeToggle.setAttribute('aria-label', actionLabel);
+  themeToggle.setAttribute('title', actionLabel);
+  const label = themeToggle.querySelector('.theme-toggle-text');
+  if (label) label.textContent = isLight ? 'Dark mode' : 'Light mode';
+  const colorMeta = document.querySelector('meta[name="theme-color"]');
+  if (colorMeta) colorMeta.setAttribute('content', isLight ? '#f7fbfc' : '#071523');
+}
+if (themeToggle) {
+  syncThemeControl();
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try { window.localStorage.setItem('ctrl-alt-automate-theme', next); } catch (_) {}
+    syncThemeControl();
+  });
+}
