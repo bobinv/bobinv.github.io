@@ -1,0 +1,42 @@
+/* Ctrl Alt Automate - plain-language homepage additions.
+   Loaded after the original design and follows the existing dark/light tokens. */
+html { scroll-padding-top: 100px; }
+.hero-grid { grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); }
+.hero h1 { font-size:clamp(45px,5vw,70px); line-height:1.12; }
+.hero-copy { max-width:620px; }
+.hero-points { gap:10px 15px; }
+.hero-points span { font-size:11.5px; }
+.mock-stage-state { font-size:9px; }
+.mock-console { font-family:inherit; font-size:11px; letter-spacing:0; color:#c1dbd6; }
+.mock-float { font-size:11px; }
+.friendly-section {padding:100px 0 108px; background:var(--uc-bg); color:var(--uc-title); border-bottom:1px solid var(--uc-border); scroll-margin-top:86px;}
+.friendly-heading {display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:48px;align-items:end;margin-bottom:40px;}
+.friendly-heading .section-heading {color:var(--uc-title);max-width:700px;margin-top:20px;}
+.friendly-heading .section-intro {color:var(--uc-text);max-width:660px;line-height:1.8;}
+.friendly-aside {padding:21px 23px;border:1px solid var(--uc-border);background:var(--uc-tint);border-radius:15px;display:grid;gap:8px;align-content:start;}
+.friendly-spark {color:var(--uc-link);font-size:28px;line-height:1;}
+.friendly-aside strong {color:var(--uc-title);font-size:15px;}
+.friendly-aside span:last-child {color:var(--uc-text);font-size:12px;line-height:1.65;}
+.friendly-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;}
+.friendly-card {padding:29px;border:1px solid var(--uc-border);background:linear-gradient(135deg,var(--uc-card),var(--uc-surface));border-radius:19px;display:flex;flex-direction:column;min-width:0;}
+.friendly-icon {width:51px;height:51px;display:grid;place-items:center;border:1px solid var(--uc-border);border-radius:14px;background:var(--uc-tint);color:var(--uc-link);margin-bottom:22px;}
+.friendly-icon svg {width:25px;height:25px;}
+.friendly-kicker {font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:850;color:var(--uc-link);}
+.friendly-card h3 {font-size:clamp(18px,2vw,24px);line-height:1.29;letter-spacing:-.035em;margin:11px 0 10px;color:var(--uc-title);}
+.friendly-card>p {font-size:13px;line-height:1.7;color:var(--uc-text);margin:0 0 23px;}
+.friendly-better {margin-top:auto;padding:17px 18px;border-radius:11px;background:var(--uc-tint);border:1px solid var(--uc-border);}
+.friendly-better span {display:block;color:var(--uc-link);font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;margin-bottom:6px;}
+.friendly-better p {font-size:13px;line-height:1.65;color:var(--uc-title);margin:0;}
+.friendly-invite {margin-top:28px;padding:23px 28px;display:flex;gap:25px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,#123e3c,#0c2d39);color:#f4ffff;border:1px solid rgba(106,242,204,.23);border-radius:17px;}
+.friendly-invite>div {display:grid;gap:7px;}
+.friendly-invite strong {font-size:18px;}
+.friendly-invite span {font-size:12px;color:#b5d9d3;line-height:1.5;}
+.friendly-invite .btn {white-space:normal;text-align:center;flex-shrink:0;}
+.friendly-invite .btn span {color:#071726;font-size:16px;}
+html[data-theme='light'] .friendly-invite {background:linear-gradient(115deg,#e2f8f0,#e8f5f8);border-color:#a4dacb;color:#133c45;}
+html[data-theme='light'] .friendly-invite span {color:#476d70;}
+html[data-theme='light'] .friendly-invite .btn span {color:#071726;}
+@media(max-width:1050px){ .hero-grid {grid-template-columns:1fr;} .friendly-heading {grid-template-columns:1fr;gap:15px;} .friendly-aside {max-width:480px;} }
+@media(max-width:760px){.friendly-section {padding:70px 0 78px;} .friendly-grid {grid-template-columns:1fr;} .friendly-invite {flex-direction:column;align-items:stretch;} .friendly-invite .btn {width:100%;} }
+@media(max-width:580px){ .hero h1{font-size:clamp(41px,10.6vw,56px);} .hero-grid{gap:43px;} .mock-float {bottom:-18px;right:0;} .friendly-card {padding:23px;} .friendly-heading .section-heading {font-size:35px;} .friendly-invite {padding:23px;} }
+@media(prefers-reduced-motion:reduce){.friendly-card, .friendly-invite{transition:none!important;}}

@@ -1,12 +1,12 @@
 # Ctrl Alt Automate — Industry Use Cases edition
 
-A **seven-page, light/dark responsive website** ready for GitHub Pages. Builds on the previous Ctrl Alt Automate design with a dedicated industry use-case catalogue and guided contact enquiry email composer.
+A **seven-page, light/dark responsive website** ready for GitHub Pages. The homepage has been rewritten for non-technical business owners and team managers. Builds on the previous Ctrl Alt Automate design with a dedicated industry use-case catalogue and guided contact enquiry email composer.
 
 ## Pages
 
 | Page | File | What's new |
 | --- | --- | --- |
-| Home | `index.html` | Three featured use cases, industry links, and CTA to the catalogue |
+| Home | `index.html` | Plain-English hero and example workflow, everyday business pain points, beginner-friendly services and getting-started steps, plus industry use cases |
 | Services | `services.html` | Link from services into the industry catalogue |
 | Solutions | `solutions.html` | Link from solution patterns into industry examples |
 | **Use Cases** | `use-cases.html` | **21 practical examples for seven audiences** + industry filters and search |
@@ -56,7 +56,7 @@ No build tools, paid hosting, server, or database is required.
 ## Files included
 
 - Seven `.html` pages
-- `styles.css`, `premium.css`, `theme.css`, `usecases.css`
+- `styles.css`, `premium.css`, `theme.css`, `usecases.css`, `home-friendly.css` (homepage-only styles)
 - `script.js`, `usecases.js`
 - `usecases-data.json` — editable catalogue source text
 - `README.md` — this guide
@@ -64,3 +64,9 @@ No build tools, paid hosting, server, or database is required.
 ## Theme
 
 The header's light/dark toggle remains available on all seven pages and persists its selection in local browser storage. Dark remains the default theme.
+
+## Non-technical homepage update
+
+The homepage now leads with **"Less paperwork. More time for what matters."** It includes four familiar problems (manual data entry, chasing approvals, repeated customer questions, missed reminders), simple illustrations of possible improvements, jargon-free services, an accessible four-step way of working, and reassurance that no AI/IT experience is required. The hero illustration is explicitly labelled as an example, not a live solution or customer result.
+
+All other pages, light/dark toggle, use-case catalogue, and enquiry-email flow are unchanged.
