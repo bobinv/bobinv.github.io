@@ -28,4 +28,4 @@ No backend or build step is required.
 - Use-case examples are illustrative potential workflows, not claims about completed customer projects.
 
 ## Homepage carousel
-Four plain-English hero messages rotate every six seconds. Visitors can select a slide, pause or resume rotation; hovering or focusing inside the carousel temporarily pauses automatic rotation. Reduced-motion preferences disable automatic rotation initially. Edit the four `.lp-slide` articles in `index.html` to change the content. `carousel.css` and `carousel.js` are homepage-only assets. All other pages are unchanged.
+Four hero messages rotate automatically every six seconds from page load. No play/pause button is shown. Arrows and slide dots select a slide and restart its six-second timer. Merely hovering over the hero does not stop autoplay. Rotation temporarily waits while a slide link has focus or the page is hidden. Reduced-motion mode disables the animated fade, while keeping the automatic text changes. Edit the four `.lp-slide` articles in `index.html` to change the content. `carousel.css` and `carousel.js` are homepage-only assets. All other pages are unchanged.
