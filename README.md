@@ -58,3 +58,6 @@ The Services and Industries hero photos are credited stock imagery, not pictures
 - [Unsplash License](https://unsplash.com/license)
 
 Deploy the complete contents at the root of your existing GitHub Pages repository. The new shared stylesheet is `experience.css`. No backend or build step is required.
+
+### Full-width edition
+All seven pages share the same fluid content rails via `fullwidth.css`, loaded last. Desktop gutters are 2vw per side (minimum 16px), with no maximum container width. The homepage hero fills at least the remaining dynamic viewport height; content can grow on smaller screens. Paragraph widths stay readable. Upload this CSS and all seven updated HTML files, or deploy the full package.
