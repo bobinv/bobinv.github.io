@@ -61,3 +61,6 @@ Deploy the complete contents at the root of your existing GitHub Pages repositor
 
 ### Full-width edition
 All seven pages share the same fluid content rails via `fullwidth.css`, loaded last. Desktop gutters are 2vw per side (minimum 16px), with no maximum container width. The homepage hero fills at least the remaining dynamic viewport height; content can grow on smaller screens. Paragraph widths stay readable. Upload this CSS and all seven updated HTML files, or deploy the full package.
+
+## Rotating Evola logo hero
+The homepage uses the supplied transparent Evola symbol in a lightweight CSS 3D-style layered rotation (20 seconds per revolution), independent of the existing six-second headline carousel. The hero targets 67% of the viewport height on desktop, expanding as needed to avoid clipping. Mobile stacks the artwork beneath the copy. Reduced-motion settings stop the decorative motion. All new artwork is local; no new external libraries or services are needed. Homepage-only styling is in `logo-hero.css`.
