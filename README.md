@@ -64,3 +64,6 @@ All seven pages share the same fluid content rails via `fullwidth.css`, loaded l
 
 ## Rotating Evola logo hero
 The homepage uses the supplied transparent Evola symbol in a lightweight CSS 3D-style layered rotation (20 seconds per revolution), independent of the existing six-second headline carousel. The hero targets 67% of the viewport height on desktop, expanding as needed to avoid clipping. Mobile stacks the artwork beneath the copy. Reduced-motion settings stop the decorative motion. All new artwork is local; no new external libraries or services are needed. Homepage-only styling is in `logo-hero.css`.
+
+## Activate Evola
+The homepage symbol opens six clickable capability links when selected. It turns to face forward and stops while expanded; selecting it again resumes rotation. The links form a radial desktop layout and a two-column mobile grid. `activate-evola.css` and `activate-evola.js` are local, dependency-free assets.
