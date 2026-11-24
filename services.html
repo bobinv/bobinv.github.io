@@ -12,6 +12,7 @@
 <title>Services | Evola</title>
 <link rel="icon" type="image/png" href="evola-symbol.png"/>
 <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="premium.css"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="usecases.css"><link rel="stylesheet" href="evola.css?v=1"/>
+<link rel="stylesheet" href="industry-menu.css?v=1"/>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="top"><div class="container nav-inner">
 <a class="brand" href="index.html" aria-label="Evola home">
@@ -20,7 +21,19 @@
 <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="index.html">Home</a>
 <a href="services.html" aria-current="page">Services</a>
 <a href="solutions.html">Solutions</a>
-<a href="use-cases.html">Use Cases</a>
+<div class="industry-dropdown">
+<button type="button" class="industry-trigger" aria-expanded="false" aria-controls="industry-menu">Use Cases <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button>
+<div class="industry-menu" id="industry-menu" hidden>
+<span class="industry-menu-label">EXPLORE BY INDUSTRY</span>
+<a href="use-cases.html?industry=finance#browse-usecases" data-industry-link="finance">Finance</a>
+<a href="use-cases.html?industry=assets#browse-usecases" data-industry-link="assets">Asset Management</a>
+<a href="use-cases.html?industry=retail#browse-usecases" data-industry-link="retail">Retail</a>
+<a href="use-cases.html?industry=councils#browse-usecases" data-industry-link="councils">Councils</a>
+<a href="use-cases.html?industry=schools#browse-usecases" data-industry-link="schools">Schools</a>
+<a href="use-cases.html?industry=tradies#browse-usecases" data-industry-link="tradies">Tradies</a>
+<a href="use-cases.html?industry=healthcare#browse-usecases" data-industry-link="healthcare">Healthcare</a>
+<a class="industry-all" href="use-cases.html#browse-usecases" data-industry-link="all">View all use cases <span aria-hidden="true">&#8599;</span></a>
+</div></div>
 <a href="ai-training.html">AI Training</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a></nav>
@@ -52,4 +65,4 @@
 <a href="use-cases.html">Use Cases</a><a href="ai-training.html">AI Training</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
 <div><h3 class="footer-heading">Get in touch</h3><div class="footer-list"><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a><a href="contact.html">Start a conversation</a><a href="#top">Back to top ↑</a></div></div></div>
 <div class="footer-bottom"><span>© <span class="js-year">2026</span> Evola. All rights reserved.</span><span>Made to simplify complex work.</span></div>
-</div></footer><script src="script.js" defer></script></body></html>
+</div></footer><script src="script.js?v=2" defer></script></body></html>

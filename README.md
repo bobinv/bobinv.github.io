@@ -31,3 +31,7 @@ No backend or build step is required.
 
 ## Evola branding and motion
 The provided Evola logo artwork is included as evola-logo.png and its original symbol is used alongside the Evola wordmark in the header and footer. The hero uses a one-second overlapping fade every six seconds, with slide indicators only. Supported browsers use native cross-document view transitions for same-origin navigation. Reduced-motion preferences disable transition animation.
+
+## Industry navigation
+
+Use Cases in the site header opens a dropdown with seven industries and View all use cases. Each link opens the existing catalogue with that industry selected. The menu supports touch, mouse, Tab, arrow keys and Escape. Upload all files together; `industry-menu.css` is new and `script.js` and `usecases.js` have been updated.

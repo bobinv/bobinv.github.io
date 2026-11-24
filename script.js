@@ -22,7 +22,7 @@ if (toggle && nav && icon) {
     } else closeMenu();
   });
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !event.defaultPrevented && nav.classList.contains('open')) { closeMenu(); toggle.focus(); } });
 }
 document.querySelectorAll('.js-year').forEach(e => e.textContent = String(new Date().getFullYear()));
 
@@ -49,3 +49,33 @@ if (themeToggle) {
     syncThemeControl();
   });
 }
+
+// Industry navigation disclosure (regular links, not an ARIA application menu).
+(() => {
+  const dropdown = document.querySelector('.industry-dropdown');
+  const trigger = dropdown?.querySelector('.industry-trigger');
+  const panel = dropdown?.querySelector('.industry-menu');
+  if (!dropdown || !trigger || !panel) return;
+  const links = [...panel.querySelectorAll('a')];
+  const setOpen = open => {
+    trigger.setAttribute('aria-expanded', String(open));
+    panel.hidden = !open;
+  };
+  trigger.addEventListener('click', () => setOpen(panel.hidden));
+  dropdown.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !panel.hidden) {
+      event.preventDefault(); setOpen(false); trigger.focus();
+    } else if (event.target === trigger && ['ArrowDown', 'ArrowUp'].includes(event.key)) {
+      event.preventDefault(); setOpen(true); links[event.key === 'ArrowDown' ? 0 : links.length - 1].focus();
+    } else if (!panel.hidden && links.includes(event.target) && ['ArrowDown','ArrowUp','Home','End'].includes(event.key)) {
+      event.preventDefault(); const i = links.indexOf(event.target);
+      links[event.key === 'Home' ? 0 : event.key === 'End' ? links.length - 1 : (i + (event.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length].focus();
+    }
+  });
+  document.addEventListener('click', event => { if (!dropdown.contains(event.target)) setOpen(false); });
+  dropdown.addEventListener('focusout', event => { if (event.relatedTarget && !dropdown.contains(event.relatedTarget)) setOpen(false); });
+  links.forEach(link => link.addEventListener('click', () => setOpen(false)));
+  // Reset the disclosure when the responsive navigation changes state.
+  const mq = window.matchMedia('(max-width: 1050px)');
+  mq.addEventListener?.('change', () => setOpen(false));
+})();

@@ -29,6 +29,10 @@
       button.setAttribute('aria-pressed', String(active));
     });
     if (status) status.textContent = `Showing ${found} of 21 use case${found === 1 ? '' : 's'}${current === 'all' ? '' : ' · ' + (groupButtons.find(b => b.dataset.ucFilter === current)?.textContent || '').replace(/\s*3\s*$/, '').trim()}`;
+    document.querySelectorAll('[data-industry-link]').forEach(link => {
+      if (link.dataset.industryLink === current) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
     if (empty) empty.hidden = found > 0;
   }
   if (groups.length) {
@@ -45,7 +49,8 @@
       updateCatalog();
     }));
     search?.addEventListener('input', updateCatalog);
-    reset?.addEventListener('click', () => {current = 'all';if(search)search.value='';updateCatalog();search?.focus();});
+    reset?.addEventListener('click', () => {current = 'all';if(search)search.value='';const url = new URL(location.href);url.searchParams.delete('industry');url.hash='';history.replaceState(null,'',url);updateCatalog();search?.focus();});
+    window.addEventListener('hashchange', () => { const params = new URLSearchParams(location.search); const choice = params.get('industry') || location.hash.slice(1); current = validIndustry.has(choice) ? choice : 'all'; updateCatalog(); });
     updateCatalog();
   }
 
