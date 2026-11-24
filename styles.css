@@ -418,7 +418,7 @@
  .detail-card,.track-card,.contact-option { padding:25px; }
 }
 
-/* Ctrl Alt Automate: preserve comfortable header spacing with the expanded brand. */
+/* Evola: preserve comfortable header spacing with the expanded brand. */
 @media (max-width: 1050px) and (min-width: 821px) {
   .site-header { height: 72px; }
   .nav-cta { display: none; }

@@ -45,7 +45,7 @@ if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
-    try { window.localStorage.setItem('ctrl-alt-automate-theme', next); } catch (_) {}
+    try { window.localStorage.setItem('evola-theme', next); } catch (_) {}
     syncThemeControl();
   });
 }

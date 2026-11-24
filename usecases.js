@@ -1,4 +1,4 @@
-/* Ctrl Alt Automate | Use-case industry filters and contact enquiry composer.
+/* Evola | Use-case industry filters and contact enquiry composer.
    No backend, no tracking, no third-party script. */
 (() => {
   const groupButtons = Array.from(document.querySelectorAll('[data-uc-filter]'));
@@ -79,9 +79,9 @@
     const message = String(data.get('message') || '').trim();
     if (!name || !email || !message) return null;
     const interest = label('use_case') === 'Choose an example (optional)' ? 'General enquiry' : label('use_case');
-    const subject = 'Ctrl Alt Automate enquiry - ' + interest;
+    const subject = 'Evola enquiry - ' + interest;
     const body = [
-      'Hello Ctrl Alt Automate,','',
+      'Hello Evola,','',
       'I would like to discuss a business workflow.','',
       'Name: ' + name,
       'Email: ' + email,

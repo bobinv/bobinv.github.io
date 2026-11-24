@@ -1,0 +1,13 @@
+/* Evola identity, adapted from the supplied logo. */
+.brand .evola-symbol{display:block;width:53px;height:39px;object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 0 8px rgba(33,193,190,.12))}
+.brand .brand-name{font-size:24px;font-weight:850;letter-spacing:1.2px;line-height:1;color:#43c9c8;text-transform:uppercase}
+.brand .brand-label{font-size:9px;letter-spacing:2px;margin-top:5px;color:var(--muted,#aec6d1)}
+html[data-theme="light"] .brand .brand-name{color:#087e83}
+@media(max-width:650px){.brand .evola-symbol{width:43px;height:32px}.brand .brand-name{font-size:20px}.brand .brand-label{font-size:8px;letter-spacing:1.5px}}
+/* Native same-origin document transitions; unsupported browsers navigate normally. */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation: evola-page-out .24s ease both}
+::view-transition-new(root){animation: evola-page-in .38s ease both}
+@keyframes evola-page-out{to{opacity:0}}
+@keyframes evola-page-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-old(root),::view-transition-new(root){animation:none}}

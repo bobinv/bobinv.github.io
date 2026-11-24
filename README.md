@@ -1,6 +1,6 @@
-# Ctrl Alt Automate — Simplified Homepage
+# Evola — Simplified Homepage
 
-This is the current seven-page Ctrl Alt Automate website, with a shorter and clearer homepage designed for non-technical business visitors.
+This is the current seven-page Evola website, with a shorter and clearer homepage designed for non-technical business visitors.
 
 ## What changed on the homepage
 
@@ -28,4 +28,6 @@ No backend or build step is required.
 - Use-case examples are illustrative potential workflows, not claims about completed customer projects.
 
 ## Homepage carousel
-Four hero messages rotate automatically every six seconds from page load. No play/pause button is shown. Arrows and slide dots select a slide and restart its six-second timer. Merely hovering over the hero does not stop autoplay. Rotation temporarily waits while a slide link has focus or the page is hidden. Reduced-motion mode disables the animated fade, while keeping the automatic text changes. Edit the four `.lp-slide` articles in `index.html` to change the content. `carousel.css` and `carousel.js` are homepage-only assets. All other pages are unchanged.
+
+## Evola branding and motion
+The provided Evola logo artwork is included as evola-logo.png and its original symbol is used alongside the Evola wordmark in the header and footer. The hero uses a one-second overlapping fade every six seconds, with slide indicators only. Supported browsers use native cross-document view transitions for same-origin navigation. Reduced-motion preferences disable transition animation.

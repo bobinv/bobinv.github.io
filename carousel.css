@@ -1,8 +1,8 @@
 /* A stable-height, progressively enhanced homepage carousel. */
 .lp-carousel-inner{position:relative;z-index:1;padding-top:0;padding-bottom:28px}
 .lp-carousel .lp-slides{display:grid;grid-template-columns:minmax(0,1fr)}
-.lp-carousel .lp-slide{grid-area:1/1;min-width:0;visibility:hidden;opacity:0;pointer-events:none}
-.lp-carousel .lp-slide.is-active{visibility:visible;opacity:1;pointer-events:auto;animation:lp-slide-in .65s ease both}
+.lp-carousel .lp-slide{grid-area:1/1;min-width:0;visibility:hidden;opacity:0;pointer-events:none;transition:opacity 1s cubic-bezier(.4,0,.2,1),visibility 0s linear 1s;z-index:0}
+.lp-carousel .lp-slide.is-active{visibility:visible;opacity:1;pointer-events:auto;transition:opacity 1s cubic-bezier(.4,0,.2,1),visibility 0s;z-index:1}
 .lp-carousel .lp-hero-inner{padding-top:60px;padding-bottom:36px;min-height:570px}
 .lp-carousel .lp-slide-title{font-size:clamp(50px,6.1vw,91px);font-weight:900;letter-spacing:-.07em;line-height:1.04;margin:28px 0 27px;color:#f7fffc;overflow-wrap:normal}
 html[data-theme="light"] .lp-carousel .lp-slide-title{color:#123346}
@@ -28,4 +28,7 @@ html[data-theme="light"] .lp-carousel .lp-slide-title{color:#123346}
 @media(max-width:1060px){.lp-carousel .lp-slide-title{font-size:clamp(44px,5.7vw,75px)}}
 @media(max-width:850px){.lp-carousel .lp-hero-inner{min-height:unset;padding-top:58px;padding-bottom:35px;gap:28px}.lp-carousel .lp-slide-title{font-size:clamp(49px,9vw,76px)}}
 @media(max-width:650px){.lp-carousel .lp-hero-inner{padding-top:45px;padding-bottom:26px;gap:24px}.lp-carousel .lp-slide-title{font-size:clamp(38px,10.5vw,65px);margin:20px 0}.lp-carousel .lp-board-body{padding:17px}.lp-carousel .lp-board-row{padding:9px}.lp-carousel .lp-board-body h2{margin-bottom:15px}.lp-carousel .lp-board-top{padding:12px}.lp-carousel .lp-board-disclaimer{margin-top:12px}.lp-carousel .lp-hero-copy>p{margin-bottom:19px}.lp-carousel .lp-hero-note{margin-top:16px}.lp-carousel-inner{padding-bottom:18px}.lp-carousel-controls{gap:5px}.lp-carousel-position,.lp-slide-dots,.lp-carousel-buttons{gap:3px}.lp-slide-count{margin-right:3px}.lp-slide-dot{min-width:29px;padding:3px}.lp-slide-dot span{width:17px}.lp-slide-dot[aria-current="true"] span{width:22px}.lp-control{padding:0 9px}}
-@media(prefers-reduced-motion:reduce){.lp-carousel .lp-slide.is-active{animation:none}.lp-carousel .lp-art-glow,.lp-carousel .lp-orbit,.lp-slide-dot span{transition:none}}
+@media(prefers-reduced-motion:reduce){.lp-carousel .lp-slide,.lp-carousel .lp-slide.is-active{transition:none}.lp-carousel .lp-art-glow,.lp-carousel .lp-orbit,.lp-slide-dot span{transition:none}}
+
+/* Minimal slide selection; no directional or playback buttons. */
+.lp-carousel-controls{justify-content:center;border-top:0;padding-top:4px}.lp-carousel-position{justify-content:center}.lp-slide-count{display:none}

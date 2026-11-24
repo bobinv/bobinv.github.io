@@ -36,8 +36,6 @@
     if (manual && status) status.textContent = slides[active].getAttribute('aria-label');
     schedule();
   }
-  root.querySelector('.lp-prev')?.addEventListener('click', () => show(active - 1, true));
-  root.querySelector('.lp-next')?.addEventListener('click', () => show(active + 1, true));
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i, true)));
   // Do not hide the link currently being used by a keyboard or screen reader.
   root.addEventListener('focusin', schedule);
