@@ -25,3 +25,8 @@ html[data-theme=light] .nav-links .industry-menu .industry-all { color:#08715e; 
   html[data-theme=light] .industry-menu { box-shadow:none; }
 }
 @media(prefers-reduced-motion:reduce) { .industry-trigger svg { transition:none; } }
+
+/* Bridge the gap between the desktop trigger and the dropdown panel. */
+@media (min-width:1051px) and (hover:hover) and (pointer:fine) {
+  .industry-menu::before { content:""; position:absolute; top:-16px; left:0; right:0; height:16px; }
+}

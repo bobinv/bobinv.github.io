@@ -15,7 +15,7 @@
   }
   function schedule() {
     clearTimeout(timer);
-    if (document.hidden || readingSlide()) return;
+    if (document.hidden || readingSlide() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     timer = setTimeout(() => show(active + 1), delay);
   }
   function show(index, manual = false) {
@@ -42,6 +42,7 @@
   root.addEventListener('focusout', () => Promise.resolve().then(schedule));
   document.addEventListener('visibilitychange', schedule);
   window.addEventListener('pageshow', schedule);
+  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change', schedule);
   if (controls) controls.hidden = false;
   show(0);
 })();

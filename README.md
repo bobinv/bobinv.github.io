@@ -11,7 +11,7 @@ This is the current seven-page Evola website, with a shorter and clearer homepag
 - One simple contact call to action.
 - Reduced from eight homepage sections to four.
 
-All other pages (Services, Solutions, Use Cases, AI Training, About, Contact), the seven industry categories, and the dark/light mode switch are retained.
+All other pages (Services, Solutions, Industries, AI Training, About, Contact), the seven industry categories, and the dark/light mode switch are retained.
 
 ## How to publish
 
@@ -34,4 +34,27 @@ The provided Evola logo artwork is included as evola-logo.png and its original s
 
 ## Industry navigation
 
-Use Cases in the site header opens a dropdown with seven industries and View all use cases. Each link opens the existing catalogue with that industry selected. The menu supports touch, mouse, Tab, arrow keys and Escape. Upload all files together; `industry-menu.css` is new and `script.js` and `usecases.js` have been updated.
+Industries in the site header opens automatically on desktop mouse hover and on tap for mobile, with seven industries and View all industries. Each link opens the existing catalogue with that industry selected. The menu supports touch, mouse, Tab, arrow keys and Escape. Upload all files together; `industry-menu.css` is new and `script.js` and `usecases.js` have been updated.
+
+## Wide homepage layout
+The desktop header and carousel now use 96% of the viewport (up to 1800px), with a larger headline and a level, expanded illustration. Below-hero content and mobile layout retain their original reading widths. To apply this update to the preceding industry-dropdown edition, replace `evola.css` and the seven HTML files (which reference the versioned stylesheet).
+
+The Industries menu uses desktop hover with a small pointer bridge and delayed closing, and supports tap, keyboard activation, and Escape. Existing use-cases.html links and industry filters are preserved.
+
+## Cinematic homepage edition
+
+- Original CSS/SVG animated full-width waves, with four rotating headings and no workflow illustration panel or directional/playback controls.
+- Two-column Industries mega menu opens on desktop hover, with tap and keyboard support.
+- Ask Evola FAQ uses native HTML disclosure controls.
+- The carousel and background respect reduced-motion preferences.
+- All seven pages and 21 illustrative use cases remain. The contact form still opens an email draft; configure your email or Formspree separately.
+
+### Illustrative photography
+
+The Services and Industries hero photos are credited stock imagery, not pictures of Evola staff or clients. Images are referenced from Unsplash's image CDN; download access was blocked in the creation environment, so no photo binaries are included. A styled fallback appears if either image is unavailable. For fully self-contained hosting, download the images from the credited sources, store them locally and replace their `src` URLs.
+
+- Services: [Vitaly Gariev](https://unsplash.com/photos/team-collaborating-around-a-computer-in-an-office-UikYLDQj9_I)
+- Industries: [Blake Wisz](https://unsplash.com/photos/woman-paying-at-salon-checkout-counter-tE6th1h6Bfk)
+- [Unsplash License](https://unsplash.com/license)
+
+Deploy the complete contents at the root of your existing GitHub Pages repository. The new shared stylesheet is `experience.css`. No backend or build step is required.

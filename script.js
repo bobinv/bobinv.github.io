@@ -57,11 +57,28 @@ if (themeToggle) {
   const panel = dropdown?.querySelector('.industry-menu');
   if (!dropdown || !trigger || !panel) return;
   const links = [...panel.querySelectorAll('a')];
+  const mq = window.matchMedia('(min-width: 1051px) and (hover: hover) and (pointer: fine)');
+  let closeTimer;
   const setOpen = open => {
+    clearTimeout(closeTimer);
     trigger.setAttribute('aria-expanded', String(open));
     panel.hidden = !open;
   };
-  trigger.addEventListener('click', () => setOpen(panel.hidden));
+  // Hover on desktop; tap/click disclosure on touch and keyboard.
+  dropdown.addEventListener('pointerenter', event => {
+    if (mq.matches && event.pointerType === 'mouse') setOpen(true);
+  });
+  dropdown.addEventListener('pointerleave', event => {
+    if (!mq.matches || event.pointerType !== 'mouse') return;
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
+      if (!dropdown.matches(':hover') && !dropdown.contains(document.activeElement)) setOpen(false);
+    }, 180);
+  });
+  trigger.addEventListener('click', event => {
+    if (mq.matches && event.detail > 0) setOpen(true);
+    else setOpen(panel.hidden);
+  });
   dropdown.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !panel.hidden) {
       event.preventDefault(); setOpen(false); trigger.focus();
@@ -76,6 +93,6 @@ if (themeToggle) {
   dropdown.addEventListener('focusout', event => { if (event.relatedTarget && !dropdown.contains(event.relatedTarget)) setOpen(false); });
   links.forEach(link => link.addEventListener('click', () => setOpen(false)));
   // Reset the disclosure when the responsive navigation changes state.
-  const mq = window.matchMedia('(max-width: 1050px)');
   mq.addEventListener?.('change', () => setOpen(false));
+  toggle?.addEventListener('click', () => { if (!nav?.classList.contains('open')) setOpen(false); });
 })();
