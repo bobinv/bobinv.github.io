@@ -1,35 +1,28 @@
-# Ctrl Alt Automate — Enterprise-style Homepage Edition
+# Ctrl Alt Automate — Simplified Homepage
 
-Static, multi-page business website designed for GitHub Pages. This edition redesigns **the homepage** with a bold statement-led layout, original vector artwork, editorial sections, a use-case switcher and direct calls to action. It draws inspiration from the general visual hierarchy of premium technology consultancy websites (including LAB3), but uses independent code, imagery and copy. It is **not affiliated with LAB3**.
+This is the current seven-page Ctrl Alt Automate website, with a shorter and clearer homepage designed for non-technical business visitors.
 
-## Contents
+## What changed on the homepage
 
-- `index.html` — redesigned homepage with original headline, service pathways, industries, and interactive example selector
-- `homepage.css` — homepage-specific visual design, mobile and light/dark rules
-- `homepage.js` — no-dependency interactive examples
-- `services.html`, `solutions.html`, `use-cases.html`, `ai-training.html`, `about.html`, `contact.html` — retained existing pages
-- Existing shared CSS/JS/data files — required for the other pages
+- One bold promise: **Less admin. More time.**
+- One quick explanation of what the business does, without AI/IT terminology.
+- Three everyday problem categories: paperwork, enquiries and practical AI help.
+- One easy-to-understand invoice example, with an illustrative before/after.
+- One simple contact call to action.
+- Reduced from eight homepage sections to four.
 
-## Publish on GitHub Pages
+All other pages (Services, Solutions, Use Cases, AI Training, About, Contact), the seven industry categories, and the dark/light mode switch are retained.
 
-1. Extract the ZIP into a folder.
-2. Upload **the files themselves** (not a ZIP or an extra enclosing folder) to the root of your `YOURUSERNAME.github.io` repository.
-3. In GitHub, open **Settings → Pages** and choose **Deploy from a branch**: `main` and `/ (root)`.
-4. Visit `https://YOURUSERNAME.github.io` after the Pages deployment finishes.
+## How to publish
 
-If your site is already published, replace old files with these files and commit. No database, framework or server is required.
+1. Unzip the website.
+2. Upload **all files** to the root of your GitHub Pages repository, replacing the current files.
+3. Commit changes. GitHub Pages republishes the site automatically.
 
-## Edit before publishing
+No backend or build step is required.
 
-- Replace `hello@yourdomain.com` with your real business address in the existing files.
-- Update company details, privacy/terms and service claims as applicable.
-- The Contact page currently opens an email draft; it is **not connected to Formspree**.
-- The workflow illustration and examples describe **possible solutions**, not completed client work.
-- Never insert unverified client logos, awards, testimonials or improvement percentages.
+## To customise before launch
 
-## Theme and accessibility
-
-- Dark and light mode are inherited from the existing shared `script.js` and `theme.css`.
-- Homepage-specific light theme rules are in `homepage.css`.
-- The example selector uses semantic buttons and `aria-pressed`, and respects reduced-motion preferences.
-- All files work locally by opening `index.html` or with a static file server.
+- Replace `hello@yourdomain.com` with the real business contact email.
+- The Contact page currently prepares an email draft instead of submitting to Formspree.
+- Use-case examples are illustrative potential workflows, not claims about completed customer projects.
