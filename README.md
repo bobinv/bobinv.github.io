@@ -26,3 +26,6 @@ No backend or build step is required.
 - Replace `hello@yourdomain.com` with the real business contact email.
 - The Contact page currently prepares an email draft instead of submitting to Formspree.
 - Use-case examples are illustrative potential workflows, not claims about completed customer projects.
+
+## Homepage carousel
+Four plain-English hero messages rotate every six seconds. Visitors can select a slide, pause or resume rotation; hovering or focusing inside the carousel temporarily pauses automatic rotation. Reduced-motion preferences disable automatic rotation initially. Edit the four `.lp-slide` articles in `index.html` to change the content. `carousel.css` and `carousel.js` are homepage-only assets. All other pages are unchanged.
